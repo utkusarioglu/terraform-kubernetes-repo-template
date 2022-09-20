@@ -1,4 +1,4 @@
-module utkusarioglu.com/templates/terraform-repo-template
+module utkusarioglu.com/templates/terraform-kubernetes-repo-template
 
 go 1.18
 
