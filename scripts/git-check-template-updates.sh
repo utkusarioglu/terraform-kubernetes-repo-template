@@ -17,6 +17,8 @@ check_template_updates() {
   template_date_human=$(git log $template_repo_ref -1 --format=%cd --date=format:'%Y-%m-%d %H:%M:%S')
   template_date_epoch=$(date -d "$template_date_human" +%s)
 
+  echo "$template_repo_ref: $template_date_human" >> parent.log
+
   if [ "$template_last_commit_epoch" -lt "$template_date_epoch" ];
   then
     diff=$(git diff HEAD $template_repo_ref)
@@ -38,6 +40,7 @@ check_config_attributes() {
   if [ -f "$config_file" ];
   then
     source $config_file
+    echo "$pretty_name: $config_file" >> parent.log
     echo "$pretty_name config file found at '$config_file'"
     for attribute in TEMPLATE_REPO_ORIGIN \
       TEMPLATE_REPO_BRANCH \
@@ -59,6 +62,7 @@ check_repo_template_updates() {
   repo_config_response=$(check_config_attributes "Repo" "$REPO_CONFIG_FILE")
   if [[ "$repo_config_response" != *"Error"* ]];
   then
+    source $REPO_CONFIG_FILE
     repo_template_status=$(check_template_updates \
       $TEMPLATE_REPO_ORIGIN \
       $TEMPLATE_REPO_BRANCH \
@@ -74,6 +78,7 @@ check_parent_template_updates() {
   config_response=$(check_config_attributes "Parent" "$PARENT_TEMPLATE_CONFIG_FILE")
   if [[ "$config_response" != *"Error"* ]] && [[ "$config_response" != *"Warn"* ]]
   then
+    source $PARENT_TEMPLATE_CONFIG_FILE
     parent_template_status=$(check_template_updates \
       $TEMPLATE_REPO_ORIGIN \
       $TEMPLATE_REPO_BRANCH \
