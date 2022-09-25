@@ -4,8 +4,8 @@
     "../.docker/docker-compose.dev.yml",
     "docker-compose.yml"
   ],
-  "service": "terraform",
   "postCreateCommand": "scripts/post-create-command.sh",
+  "service": "terraform",
   "workspaceFolder": "/utkusarioglu-com/templates/terraform-kubernetes-repo-template",
   "customizations": {
     "vscode": {
