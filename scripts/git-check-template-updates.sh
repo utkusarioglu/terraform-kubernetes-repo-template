@@ -14,7 +14,7 @@ check_template_updates() {
   fi
 
   git fetch $template_repo_origin > /dev/null
-  template_date_human=$(git log $template_repo_ref -1 --format=%cd --date=format:'%Y-%m-%d %H:%M:%S')
+  template_date_human=$(git_last_commit_utc_date $template_repo_ref)
   template_date_epoch=$(date -d "$template_date_human" +%s)
   
   local_repo_url=$(git remote get-url origin)
@@ -74,7 +74,7 @@ check_repo_template_updates() {
       echo "$repo_config_response"
     fi
   else
-    echo "Info: Skipping repo template updates as this is a template repo"
+    echo "Info: Skipping repo template update check, this repo isn't eligible."
   fi
 }
 
@@ -95,7 +95,7 @@ check_parent_template_updates() {
       echo "$config_response" 
     fi
   else
-    echo "Info: Skipping parent template updates as this is a regular repo"
+    echo "Info: Skipping parent template update check, this repo isn't eligible."
   fi
 }
 

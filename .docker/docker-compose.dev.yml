@@ -6,3 +6,5 @@ services:
     image: utkusarioglu/terraform-kubernetes-devcontainer:1.2.14
     volumes:
       - ..:/utkusarioglu-com/templates/terraform-kubernetes-repo-template
+    environment:
+      TZ: Etc/UTC
