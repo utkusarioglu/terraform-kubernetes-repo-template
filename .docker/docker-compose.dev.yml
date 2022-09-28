@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  terraform:
+  terraform-kubernetes-repo-template:
     container_name: terraform-kubernetes-repo-template
     image: utkusarioglu/terraform-kubernetes-devcontainer:1.2.14
     volumes:
