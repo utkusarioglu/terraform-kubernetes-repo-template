@@ -3,7 +3,7 @@ version: "3.9"
 services:
   tf-k8s-repo-template:
     container_name: tf-k8s-repo-template
-    image: utkusarioglu/tf-k8s-devcontainer:1.2.experiment-feature-provisioning-script-19
+    image: utkusarioglu/tf-k8s-devcontainer:1.2.15
     volumes:
       - type: bind
         source: ..
