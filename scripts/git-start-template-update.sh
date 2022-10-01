@@ -130,7 +130,7 @@ scripts/git-template-update-adjustments.sh \
   $repo_service \
   $repo_path \
   $record_target \
-  $template_auto_reject
+  "$template_auto_reject"
 
 echo
 echo -e "${GREEN_TEXT}Template update started${DEFAULT_TEXT}"

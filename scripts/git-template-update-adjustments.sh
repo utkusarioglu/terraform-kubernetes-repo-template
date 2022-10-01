@@ -24,7 +24,7 @@ record_target=$5
 template_auto_reject=$6
 
 if [ ! -z "$template_auto_reject" ]; then
-  echo "Auto-rejections found…"
+  echo "Auto-rejections found: '$template_auto_reject'"
   for rejection in $template_auto_reject; do
     echo "Rejecting: '$rejection'…"
     git reset HEAD -- $rejection
