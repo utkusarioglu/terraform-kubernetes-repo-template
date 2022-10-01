@@ -1,12 +1,12 @@
 {
-  "name": "terraform-kubernetes-repo-template.templates.utkusarioglu.com",
+  "name": "tf-k8s-repo-template.templates.utkusarioglu.com",
   "dockerComposeFile": [
     "../.docker/docker-compose.dev.yml",
     "docker-compose.yml"
   ],
   "postCreateCommand": "scripts/post-create-command.sh",
-  "service": "terraform-kubernetes-repo-template",
-  "workspaceFolder": "/utkusarioglu-com/templates/terraform-kubernetes-repo-template",
+  "service": "tf-k8s-repo-template",
+  "workspaceFolder": "/utkusarioglu-com/templates/tf-k8s-repo-template",
   "customizations": {
     "vscode": {
       "extensions": [

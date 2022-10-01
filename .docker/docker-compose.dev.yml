@@ -1,10 +1,10 @@
 version: "3.9"
 
 services:
-  terraform-kubernetes-repo-template:
-    container_name: terraform-kubernetes-repo-template
-    image: utkusarioglu/terraform-kubernetes-devcontainer:1.2.14
+  tf-k8s-repo-template:
+    container_name: tf-k8s-repo-template
+    image: utkusarioglu/tf-k8s-devcontainer:1.2.experiment-feature-provisioning-script-19
     volumes:
-      - ..:/utkusarioglu-com/templates/terraform-kubernetes-repo-template
+      - ..:/utkusarioglu-com/templates/tf-k8s-repo-template
     environment:
       TZ: Etc/UTC

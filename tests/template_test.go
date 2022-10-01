@@ -31,7 +31,7 @@ func TestTemplate(t *testing.T) {
 	test_structure.RunTestStage(t, "validate", func() {
 		terraformOptions := test_structure.LoadTerraformOptions(t, ".")
 		output := terraform.Output(t, terraformOptions, "greeting")
-		assert.Equal(t, "Hello, terraform-kubernetes-repo-template!", output)
+		assert.Equal(t, "Hello, tf-k8s-repo-template!", output)
 	})
 
 	test_structure.RunTestStage(t, "teardown", func() {
