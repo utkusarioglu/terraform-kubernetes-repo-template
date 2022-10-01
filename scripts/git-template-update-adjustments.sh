@@ -23,7 +23,7 @@ repo_path=$4
 record_target=$5
 template_auto_reject=$6
 
-if [ -z "$template_auto_reject" ]; then
+if [ ! -z "$template_auto_reject" ]; then
   echo "Auto-rejections found…"
   for rejection in $template_auto_reject; do
     echo "Rejecting: '$rejection'…"
