@@ -4,6 +4,7 @@ source scripts/config.sh
 check_repo_config
 check_repo_template_config
 
+template_auto_reject=$TEMPLATE_AUTO_REJECT
 repo_class=$(cat .devcontainer/devcontainer.json | jq -r '.name')
 repo_service=$(cat .devcontainer/devcontainer.json | jq -r '.service')
 repo_path=$(pwd)
@@ -128,7 +129,8 @@ scripts/git-template-update-adjustments.sh \
   $repo_class \
   $repo_service \
   $repo_path \
-  $record_target
+  $record_target \
+  $template_auto_reject
 
 echo
 echo -e "${GREEN_TEXT}Template update started${DEFAULT_TEXT}"
