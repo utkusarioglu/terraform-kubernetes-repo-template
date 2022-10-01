@@ -5,7 +5,11 @@ services:
     container_name: tf-k8s-repo-template
     image: utkusarioglu/tf-k8s-devcontainer:1.2.experiment-feature-provisioning-script-19
     volumes:
-      - ..:/utkusarioglu-com/templates/tf-k8s-repo-template
-      - /var/run/docker.sock:/var/run/docker.sock
+      - type: bind
+        source: ..
+        target: /utkusarioglu-com/templates/tf-k8s-repo-template
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
     environment:
       TZ: Etc/UTC
