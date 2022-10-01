@@ -39,9 +39,9 @@ git_template_repo_url_update $record_target $template_repo_url
 
 if [ ! -z "$template_auto_reject" ]; then
   echo "Auto-rejections found: '$template_auto_reject'"
-  for rejection in "$template_auto_reject"; do
+  for rejection in $template_auto_reject; do
     echo "Rejecting: '$rejection'…"
     git restore "$rejection" 1> /dev/null
-    # git clean -f $rejection
+    git clean -f "$rejection"
   done
 fi
