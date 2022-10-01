@@ -27,7 +27,7 @@ if [ ! -z "$template_auto_reject" ]; then
   echo "Auto-rejections found: '$template_auto_reject'"
   for rejection in $template_auto_reject; do
     echo "Rejecting: '$rejection'…"
-    git reset HEAD -- $rejection
+    git checkout HEAD -- $rejection
     git clean -f $rejection
   done
 fi
