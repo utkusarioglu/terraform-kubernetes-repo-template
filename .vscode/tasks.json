@@ -64,6 +64,9 @@
         "color": "terminal.ansiBlue",
         "id": "eye"
       },
+      "runOptions": {
+        "instanceLimit": 5
+      }
     },
     {
       "label": "Run tests",
