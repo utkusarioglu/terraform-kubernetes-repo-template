@@ -30,6 +30,15 @@ options:
       - arg: --disable=traefik
         nodeFilters:
           - server:0
+      - arg: --node-name=server-0
+        nodeFilters:
+          - server:0
+      - arg: --node-name=agent-0
+        nodeFilters:
+          - agent:0
+      - arg: --node-name=agent-1
+        nodeFilters:
+          - agent:1
     nodeLabels:
       - label: k3d-node=0
         nodeFilters:
