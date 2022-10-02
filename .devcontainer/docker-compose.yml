@@ -4,8 +4,8 @@ services:
     volumes:
       - vscode-extensions:/root/.vscode-server/extensions
       - vscode-extensions-insiders:/root/.vscode-server-insiders/extensions
-      - ~/.config/gh:/terratest/.config/gh:ro
-      - ~/.kube:/terratest/.kube
+      - ~/.config/gh:/home/terraform/.config/gh:ro
+      - ~/.kube:/home/terraform/.kube
       - go:/go
     command: /bin/sh -c "while sleep 1000; do :; done"
 
