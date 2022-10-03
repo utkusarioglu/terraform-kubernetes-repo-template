@@ -1,5 +1,5 @@
 source scripts/config.sh
-source scripts/git-facades.sh
+source scripts/git-utils.sh
 
 check_template_updates() {
   template_repo_origin=$1

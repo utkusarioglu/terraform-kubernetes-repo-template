@@ -80,7 +80,7 @@ EOF
   exit 4
 fi
 
-source scripts/git-facades.sh
+source scripts/git-utils.sh
 git_remote_add $TEMPLATE_REPO_ORIGIN $TEMPLATE_REPO_URL
 
 if [[ "$(git remote)" != *"$TEMPLATE_REPO_ORIGIN"* ]];

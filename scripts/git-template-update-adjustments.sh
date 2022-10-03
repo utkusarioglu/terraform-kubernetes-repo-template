@@ -2,7 +2,7 @@
 
 source scripts/config.sh
 check_repo_config
-source scripts/git-facades.sh
+source scripts/git-utils.sh
 
 git_origin_update() {
   record_target=$1
