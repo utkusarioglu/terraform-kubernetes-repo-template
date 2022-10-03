@@ -121,7 +121,10 @@ then
 fi
 
 git reset --mixed $merge_branch
-git_template_update_record "$record_target" "$template_date_human" "$template_date_epoch"
+git_template_update_record \
+  "$record_target" \
+  "$template_date_human" \
+  "$template_date_epoch"
 
 echo "Applying standard update adjustments…"
 scripts/git-template-update-adjustments.sh \

@@ -25,15 +25,18 @@ template_auto_reject=$6
 
 current=$(cat .devcontainer/devcontainer.json | jq -r '.name')
 replacement=$repo_class
-find . -type f \( ! -iwholename "./scripts/setup.sh" ! -iname ".git" \) -exec sed -i "s:$current:$replacement:g" {} \;
+find . -type f \( ! -iwholename "./scripts/setup.sh" ! -iname ".git" \) \
+  -exec sed -i "s:$current:$replacement:g" {} \;
 
 current=$(cat .devcontainer/devcontainer.json | jq -r '.workspaceFolder')
 replacement=$repo_path
-find . -type f \( ! -iwholename "./scripts/setup.sh" ! -iname ".git" \) -exec sed -i "s:$current:$replacement:g" {} \;
+find . -type f \( ! -iwholename "./scripts/setup.sh" ! -iname ".git" \) \
+  -exec sed -i "s:$current:$replacement:g" {} \;
 
 current=$(cat .devcontainer/devcontainer.json | jq -r '.service')
 replacement=$repo_service
-find . -type f \( ! -iwholename "./scripts/setup.sh" ! -iname ".git" \) -exec sed -i "s:$current:$replacement:g" {} \;
+find . -type f \( ! -iwholename "./scripts/setup.sh" ! -iname ".git" \) \
+  -exec sed -i "s:$current:$replacement:g" {} \;
 
 git_template_repo_url_update $record_target $template_repo_url
 
