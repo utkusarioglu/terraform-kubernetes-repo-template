@@ -17,7 +17,7 @@
       },
       "icon": {
         "color": "terminal.ansiMagenta",
-        "id": "triangle-up"
+        "id": "chevron-up"
       },
     },
     {
@@ -36,7 +36,45 @@
       },
       "icon": {
         "color": "terminal.ansiMagenta",
-        "id": "triangle-down"
+        "id": "chevron-down"
+      },
+    },
+    {
+      "label": "Start cluster",
+      "detail": "Start an existing K3D cluster",
+      "type": "shell",
+      "command": "k3d cluster start -c assets/k3d.config.yml",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": false,
+        "close": false
+      },
+      "icon": {
+        "color": "terminal.ansiMagenta",
+        "id": "play"
+      },
+    },
+    {
+      "label": "Stop cluster",
+      "detail": "Stop a K3d cluster",
+      "type": "shell",
+      "command": "k3d cluster stop -c assets/k3d.config.yml",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": false,
+        "close": false
+      },
+      "icon": {
+        "color": "terminal.ansiMagenta",
+        "id": "debug-stop"
       },
     },
     {
