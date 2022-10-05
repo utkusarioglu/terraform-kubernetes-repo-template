@@ -5,7 +5,13 @@
       "label": "Create cluster",
       "detail": "Create a K3s cluster for the deployment",
       "type": "shell",
-      "command": "k3d cluster create -c assets/k3d.config.yml",
+      "command": "k3d",
+      "args": [
+        "cluster",
+        "create",
+        "-c",
+        "${input:clusterConfigFilePath}"
+      ],
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -24,7 +30,13 @@
       "label": "Delete cluster",
       "detail": "Delete the runnign K3s clsuter",
       "type": "shell",
-      "command": "k3d cluster delete -c assets/k3d.config.yml",
+      "command": "k3d",
+      "args": [
+        "cluster",
+        "delete",
+        "-c",
+        "${input:clusterConfigFilePath}"
+      ],
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -43,7 +55,12 @@
       "label": "Start cluster",
       "detail": "Start an existing K3D cluster",
       "type": "shell",
-      "command": "k3d cluster start -c assets/k3d.config.yml",
+      "command": "k3d",
+      "args": [
+        "cluster",
+        "start",
+        "${input:clusterName}"
+      ],
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -243,6 +260,18 @@
       "id": "tfApplyDestroyExtraArgs",
       "description": "Extra args to add for Terraform apply and destroy",
       "default": "--auto-approve",
+      "type": "promptString"
+    },
+    {
+      "id": "clusterName",
+      "description": "Cluster name",
+      "default": "tf-k8s-repo-template",
+      "type": "promptString"
+    },
+    {
+      "id": "clusterConfigFilePath",
+      "description": "Config file path for the cluster",
+      "default": "assets/k3d.config.yml",
       "type": "promptString"
     }
   ]
