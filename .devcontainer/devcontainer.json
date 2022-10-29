@@ -2,6 +2,7 @@
   "name": "tf-k8s-repo-template.templates.utkusarioglu.com",
   "dockerComposeFile": [
     "../.docker/docker-compose.dev.yml",
+    "../.docker/docker-compose.common.yml",
     "docker-compose.yml"
   ],
   "postCreateCommand": "scripts/post-create-command.sh",
